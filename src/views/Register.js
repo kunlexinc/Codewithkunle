@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Form, Input, Button } from 'antd';
-
-
 import { collection,addDoc } from "firebase/firestore"
+import Swal from 'sweetalert2'
 
 
 //import flutterwave component
@@ -18,10 +17,11 @@ require("dotenv").config()
 function AppRegister() {
 
     
-const [fname, setFname] = useState("")
-const [lname, setLname] = useState("")
-const [phone, setPhone] = useState("")
-const [email, setEmail] = useState("")
+let [fname, setFname] = useState("")
+ 
+let [lname, setLname] = useState("")
+let [phone, setPhone] = useState("")
+let [email, setEmail] = useState("")
 // const [password, setPassword] = useState("")
 // const [cpassword, setCpassword] = useState("")
 
@@ -30,6 +30,7 @@ const userCollectRef = collection(db,"user")
 
 //function for flutterwave request
 const callPayment = async(e)=>{
+  
 	e.preventDefault()
 	
 	  handleFlutterPayment({
@@ -71,6 +72,15 @@ const createUser = async(response) =>{
 	// setPassword('')
 	// setCpassword('')
 
+
+
+  Swal.fire({
+    icon: 'success',
+    title: 'Congratulations...',
+    text: 'You cab now chat or call 07068790872',
+    footer: '<a href="/">Do you have a question?</a>'
+  })
+
 	console.log("done")
 
 }
@@ -79,7 +89,7 @@ const createUser = async(response) =>{
 const config = {
     public_key: process.env.REACT_APP_FLUTTERWAVE_PUBLIC,
     tx_ref: Date.now(),
-    amount: 100,
+    amount: 1000,
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
     customer: {
