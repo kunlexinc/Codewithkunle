@@ -79,8 +79,8 @@ const createUser = async(response) =>{
 
   Swal.fire({
     icon: 'success',
-    title: 'Congratulations...',
-    text: 'You cab now chat or call 07068790872',
+    title: 'Congratulations!',
+    text: 'You can now chat or call 07068790872',
     footer: '<a href="/">Do you have a question?</a>'
   })
 
