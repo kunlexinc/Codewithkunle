@@ -27,10 +27,13 @@ let [email, setEmail] = useState("")
 
 
 const userCollectRef = collection(db,"user")
+// const priceCollectRef = collection(db,"price")
 
 //function for flutterwave request
 const callPayment = async(e)=>{
-  
+  // await getDoc(priceCollectRef,(res)=>{
+  //   console.log(res)
+  // })
 	e.preventDefault()
 	
 	  handleFlutterPayment({
@@ -89,7 +92,7 @@ const createUser = async(response) =>{
 const config = {
     public_key: process.env.REACT_APP_FLUTTERWAVE_PUBLIC,
     tx_ref: Date.now(),
-    amount: 1000,
+    amount: 100000,
     currency: 'NGN',
     payment_options: 'card,mobilemoney,ussd',
     customer: {
@@ -100,7 +103,7 @@ const config = {
     customizations: {
       title: 'CodeWithKunle',
       description: 'Payment for items in cart',
-      logo: 'https://st2.depositphotos.com/4403291/7418/v/450/depositphotos_74189661-stock-illustration-online-shop-log.jpg',
+      logo: 'https://codewithkunle.herokuapp.com/static/media/logo1.75551d2a.png',
     },
   };
 
