@@ -21,7 +21,7 @@ function AppCourses() {
                 return( <Col xs={{ span: 24}} sm={{ span: 12}} md={{ span: 8}} key={course.id}>
               <Card
                     hoverable
-                    style={{ width: 240 }}
+                    style={{ width: '100%' }}
                     cover={<img alt="example" src={course.image} />}
                 >
                     <Meta title={course.text} description={course.desc} />

@@ -14,7 +14,7 @@ function AppMessage() {
                 </div>
                 <div className="contentHolder">
                 <a href='http://api.WhatsApp.com/send?phone=+2347068790872'>
-                <Button style={{backgroundColor:"green", width:"40%", height:"70px" }} type="primary" size="large" >
+                <Button style={{backgroundColor:"green", width:"fit-content", height:"70px" }} type="primary" size="large" >
                     Send Via WhatsApp<i className='fa fa-whatsapp'></i>
                 </Button></a>
                 </div>
